@@ -9,6 +9,8 @@ public class File {
 
 	public static void main(String[] args) {
 		BufferedReader br = null;
+		StringBuilder s = new StringBuilder();
+		
 		try {
 			InputStream inputStream = File.class.getResourceAsStream("/com/reader/text/index.html");
 			InputStreamReader inputReader = new InputStreamReader(inputStream);
@@ -16,8 +18,10 @@ public class File {
 			String line;
 			
 			while((line =br.readLine()) != null) {
-				System.out.println(line);
+				s.append(line+"\n");
+				//System.out.println(line);
 			}
+			System.out.println(s);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
